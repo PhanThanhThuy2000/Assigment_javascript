@@ -1,0 +1,54 @@
+input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.gio-hang {
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 4px #ddd;
+    padding: 20px;
+    margin: auto;
+    max-width: 100%;
+}
+
+.item-gio-hang {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.item-gio-hang .hinhAnh img {
+    width: 60px;
+    height: 60px;
+}
+
+.item-gio-hang .hinhAnh,
+.soLuong,
+.tongTien,
+.hanhDong {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.item-gio-hang .gia {
+    flex: 2;
+}
+
+.item-gio-hang .ten {
+    flex: 3;
+}
+
+.item-gio-hang .gia .giaGoc {
+    font-size: 12px;
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+.item-gio-hang .gia .giaBan {
+    color: darkred;
+}
+
+.item-gio-hang .hanhDong i:hover {
+    color: red;
+}

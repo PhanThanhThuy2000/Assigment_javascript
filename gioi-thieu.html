@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+    <div class="container ">
+        <ul class="hmenu">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="thong_tin.html">Thông tin </a></li>
+            <li><a href="gioi-thieu.html">Giới thiệu</a></li>
+        </ul>
+        <p>click vào Try it</p>
+        <button onclick="getLocation()">Try it</button>
+        <p id="demo "></p>
+        <h1>Custom HTML5 Video Player</h1>
+        <div id="player-container">
+            <video id="myplayer" width="640" height="360">
+            <source src="img/video.mp4" type="video/mp4 ">
+            Your browser does not support HTML5 Video.
+            </video>
+            <div id="controls">
+                <button onclick="playPause()">Play/Pause</button>
+                <button onclick="stopVideo()">Stop</button>
+                <button onclick="replayVideo()">Replay</button>
+                <button onclick="increaseVolume()">Volume (+)</button>
+                <button onclick="decreaseVolume()">Volume (-)</button>
+                <button onclick="muteVolume()">Mute/Unmute</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/gioi-thieu.js"></script>
+
+</html>

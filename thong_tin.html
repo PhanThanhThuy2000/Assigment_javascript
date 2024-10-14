@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký</title>
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+    <ul class="hmenu">
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="thong_tin.html">Thông tin </a></li>
+        <li><a href="gioi-thieu.html">Giới thiệu</a></li>
+    </ul>
+    <div class="tieu-de">
+        <h2>Thêm thông tin nhận hàng</h2>
+    </div>
+    <div class="form">
+        <form onsubmit="return validateForm()">
+            <div class="form-1">
+                <label for="id">Số điện thoại:</label>
+                <input type="text" id="id" name="id" placeholder="Số điện thoại">
+                <br><span id="maErr" class="error"></span><br>
+            </div>
+            <div class="form-1">
+                <label for="name">Họ và Tên:</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Họ và tên">
+                <br><span id="nameErr" class="error"></span><br>
+            </div>
+            <div class="form-1">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Email">
+                <br><span id="emailErr" class="error"></span><br>
+            </div>
+            <br>
+            <div class="sex_row">
+                <label>Giới Tính:</label>
+                <input type="radio" id="sex_boy" name="gender" value="Nam">
+                <label for="sex_boy">Nam</label>
+                <input type="radio" id="sex_girl" name="gender" value="Nữ">
+                <label for="sex_girl">Nữ</label>
+                <br><span id="genderErr" class="error"></span><br>
+            </div>
+            <div class="interest">
+                <label for="soThich">Sở Thích:</label>
+                <br><br>
+                <input type="checkbox" id="docSach" name="interest" value="Du Lịch">
+                <label for="docSach">Du Lịch</label>
+                <input type="checkbox" id="duLich" name="interest" value="Đọc Sách">
+                <label for="duLich">Đọc Sách</label>
+                <input type="checkbox" id="amNhac" name="interest" value="Âm Nhạc">
+                <label for="amNhac">Âm Nhạc</label>
+                <input type="checkbox" id="khac" name="interest" value="Khác">
+                <label for="khac">Khác</label>
+                <br><span id="interestErr" class="error"></span><br>
+            </div>
+            <br>
+            <div class="nationality">
+                <label for="nationality">Khu vực:</label>
+                <select id="nationality" name="nationality">
+                    <option value="">Chọn khu vực</option>
+                    <option value="Miền bắc">Miền bắc</option>
+                    <option value="Miền trung">Miền trung</option>
+                    <option value="Miền nam">Miền nam</option>
+                </select>
+                <br><span id="nationalityErr" class="error"></span><br>
+            </div>
+            <br>
+            <div class="ghiChu">
+                <label for="note">Địa chỉ:</label>
+                <textarea id="note" name="note" cols="50" rows="5"></textarea>
+            </div>
+            <button type="submit">Đăng ký</button>
+        </form>
+    </div>
+    <div class="table-container">
+        <h2>Danh sách nhận hàng</h2>
+        <table id="danhSachSinhVien" border="1">
+            <thead>
+                <tr>
+                    <th>Số điện thoại</th>
+                    <th>Họ và Tên</th>
+                    <th>Email</th>
+                    <th>Giới Tính</th>
+                    <th>Khu vực</th>
+                    <th>Địa chỉ</th>
+                    <th>Thao Tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dữ liệu sẽ được thêm vào đây bằng JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+
+    <script>
+        // function validateForm() {
+        //     var ma = document.getElementById("id").value;
+        //     var name = document.getElementById("fullname").value;
+        //     var email = document.getElementById("email").value;
+        //     var gender = document.querySelector('input[name="gender"]:checked');
+        //     var interestElems = document.querySelectorAll('input[name="interest"]:checked');
+        //     var nationality = document.getElementById("nationality").value;
+
+        //     var valid = true; // To keep track of form validity
+
+        //     // Clear all error messages
+        //     document.getElementById("maErr").innerHTML = "";
+        //     document.getElementById("nameErr").innerHTML = "";
+        //     document.getElementById("emailErr").innerHTML = "";
+        //     document.getElementById("genderErr").innerHTML = "";
+        //     document.getElementById("interestErr").innerHTML = "";
+        //     document.getElementById("nationalityErr").innerHTML = "";
+
+        //     if (ma.trim() === "") {
+        //         document.getElementById("maErr").innerHTML = "SDT bắt buộc phải điền";
+        //         valid = false;
+        //     }
+        //     if (name.trim() === "") {
+        //         document.getElementById("nameErr").innerHTML = "Tên bắt buộc phải điền";
+        //         valid = false;
+        //     }
+        //     if (email.trim() === "") {
+        //         document.getElementById("emailErr").innerHTML = "Email không được để trống";
+        //         valid = false;
+        //     } else if (!isValidEmail(email)) {
+        //         document.getElementById("emailErr").innerHTML = "Địa chỉ Email không hợp lệ";
+        //         valid = false;
+        //     }
+        //     if (!gender) {
+        //         document.getElementById("genderErr").innerText = "Vui lòng chọn giới tính.";
+        //         valid = false;
+        //     }
+        //     if (interestElems.length === 0) {
+        //         document.getElementById("interestErr").innerText = "Vui lòng chọn sở thích.";
+        //         valid = false;
+        //     }
+        //     if (nationality === "") {
+        //         document.getElementById("nationalityErr").innerText = "Vui lòng chọn khu vuc.";
+        //         valid = false;
+        //     }
+
+        //     // If the form is valid, process the submission
+        //     if (valid) {
+        //         validate(); // Call function to add data to the table
+        //     }
+
+        //     return false; // Prevent form submission
+        // }
+
+        // function isValidEmail(email) {
+        //     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        //     return emailRegex.test(email);
+        // }
+
+        // function validate() {
+        //     var id = document.getElementById("id").value;
+        //     var fullname = document.getElementById("fullname").value;
+        //     var email = document.getElementById("email").value;
+        //     var sex = document.querySelector('input[name="gender"]:checked').value;
+        //     var nationality = document.getElementById("nationality").value;
+        //     var note = document.getElementById("note").value;
+
+        //     // Collect interests
+        //     var interests = [];
+        //     document.querySelectorAll('input[name="interest"]:checked').forEach(function(checkbox) {
+        //         interests.push(checkbox.value);
+        //     });
+
+        //     // Create a new row in the table
+        //     var table = document.getElementById("danhSachSinhVien").getElementsByTagName('tbody')[0];
+        //     var newRow = table.insertRow(table.rows.length);
+
+        //     // Add data to the new row
+        //     newRow.insertCell(0).innerHTML = id;
+        //     newRow.insertCell(1).innerHTML = fullname;
+        //     newRow.insertCell(2).innerHTML = email;
+        //     newRow.insertCell(3).innerHTML = sex;
+        //     newRow.insertCell(4).innerHTML = nationality;
+        //     newRow.insertCell(5).innerHTML = note;
+        //     newRow.insertCell(6).innerHTML = '<button onclick="deleteRow(this)">Xóa</button>'; // Add delete button
+
+        //     // Reset form after adding data to the table
+        //     document.getElementById("id").value = "";
+        //     document.getElementById("fullname").value = "";
+        //     document.getElementById("email").value = "";
+        //     document.querySelector('input[name="gender"]:checked').checked = false;
+        //     document.getElementById("nationality").selectedIndex = 0;
+        //     document.getElementById("note").value = "";
+        //     document.querySelectorAll('input[name="interest"]:checked').forEach(function(checkbox) {
+        //         checkbox.checked = false;
+        //     });
+        // }
+
+        // function deleteRow(btn) {
+        //     var row = btn.parentNode.parentNode;
+        //     row.parentNode.removeChild(row);
+        // }
+    </script>
+</body>
+<script src="js/form.js"></script>
+
+</html>

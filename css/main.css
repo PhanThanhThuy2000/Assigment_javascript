@@ -1,0 +1,64 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+}
+
+#countdown {
+    display: inline-block;
+    display: flex;
+    margin: 20px 0;
+}
+
+#clock {
+    font-size: 2em;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+h1 {
+    color: #e74c3c;
+}
+
+.colum {
+    width: 25%;
+    margin: 10px;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.giaSP {
+    margin-left: 20px;
+    color: red;
+}
+
+.dsSp {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnAddCart {
+    padding: 5px;
+    background: #6979d2;
+    color: #fff;
+    border: 0;
+}
+
+.hanhDong {
+    padding: 5px;
+    background: #6979d2;
+    color: #fff;
+    border: 0;
+}

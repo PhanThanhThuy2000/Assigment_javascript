@@ -1,0 +1,73 @@
+* {
+    list-style: none;
+}
+
+.hmenu {
+    margin: 0px;
+    padding: 0px;
+    border-radius: 5px;
+    list-style: none;
+    background-color: orangered;
+    height: 40px;
+}
+
+.hmenu>li>a {
+    display: block;
+    line-height: 40px;
+    text-decoration: none;
+    padding-left: 25px;
+    color: white;
+}
+
+.hmenu li {
+    float: left;
+    margin: 0 5px;
+    position: relative;
+}
+
+.gioHang {
+    float: right;
+}
+
+.gioHang {
+    margin: 0px;
+    padding: 0px;
+    border-radius: 5px;
+    list-style: none;
+    height: 40px;
+    padding: 0 10px;
+}
+
+.gioHang>li {
+    float: right;
+}
+
+ul.gioHang>i {
+    display: block;
+    line-height: 40px;
+    text-decoration: none;
+    padding-left: 25px;
+    color: white;
+}
+
+#banner {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+.dh_y {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    color: white;
+    padding: 0 10px;
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}
